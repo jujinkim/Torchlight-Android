@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 
 import com.mashup.torchlight.R
+import com.mashup.torchlight.viewmodel.SignUpViewModel
 
 class SignUpEmailInputFragment : Fragment() {
 
