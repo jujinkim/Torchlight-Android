@@ -1,4 +1,4 @@
-package com.mashup.torchlight.signup
+package com.mashup.torchlight.ui.signup
 
 
 import android.os.Bundle

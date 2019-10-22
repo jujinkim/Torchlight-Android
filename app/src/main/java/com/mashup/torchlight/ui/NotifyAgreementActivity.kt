@@ -1,13 +1,13 @@
-package com.mashup.torchlight.mypage
+package com.mashup.torchlight.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.mashup.torchlight.R
 
-class CreateProfileActivity : AppCompatActivity() {
+class NotifyAgreementActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_create_profile)
+        setContentView(R.layout.activity_notify_agreement)
     }
 }

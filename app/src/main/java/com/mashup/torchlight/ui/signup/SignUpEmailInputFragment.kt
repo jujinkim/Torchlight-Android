@@ -1,4 +1,4 @@
-package com.mashup.torchlight.signup
+package com.mashup.torchlight.ui.signup
 
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle

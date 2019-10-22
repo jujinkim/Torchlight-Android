@@ -1,4 +1,4 @@
-package com.mashup.torchlight.mypage
+package com.mashup.torchlight.ui.signup
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,7 +8,7 @@ import android.view.ViewGroup
 
 import com.mashup.torchlight.R
 
-class EditProfileOptionalInfoFragment : Fragment() {
+class SignUpEmailAuthFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,14 +20,15 @@ class EditProfileOptionalInfoFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_create_profile_optional_info, container, false)
+        return inflater.inflate(R.layout.fragment_sign_up_email_auth_input, container, false)
     }
 
     companion object {
         @JvmStatic
         fun newInstance() =
-            EditProfileOptionalInfoFragment().apply {
+            SignUpEmailAuthFragment().apply {
 
             }
     }
 }
+

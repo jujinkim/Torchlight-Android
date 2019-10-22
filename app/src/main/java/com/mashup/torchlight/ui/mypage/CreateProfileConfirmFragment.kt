@@ -1,4 +1,4 @@
-package com.mashup.torchlight.mypage
+package com.mashup.torchlight.ui.mypage
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,7 +8,7 @@ import android.view.ViewGroup
 
 import com.mashup.torchlight.R
 
-class EditProfileRequiredInfoFragment : Fragment() {
+class CreateProfileConfirmFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,14 +20,14 @@ class EditProfileRequiredInfoFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_create_profile_required_info, container, false)
+        return inflater.inflate(R.layout.fragment_create_profile_confirm, container, false)
     }
 
-    companion object {
 
+    companion object {
         @JvmStatic
         fun newInstance() =
-            EditProfileRequiredInfoFragment().apply {
+            CreateProfileConfirmFragment().apply {
 
             }
     }

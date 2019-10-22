@@ -1,4 +1,4 @@
-package com.mashup.torchlight.signup
+package com.mashup.torchlight.ui.mypage
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,7 +8,7 @@ import android.view.ViewGroup
 
 import com.mashup.torchlight.R
 
-class SignUpUserInfoFragment : Fragment() {
+class EditProfileRequiredInfoFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,13 +20,14 @@ class SignUpUserInfoFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_sign_up_user_info, container, false)
+        return inflater.inflate(R.layout.fragment_create_profile_required_info, container, false)
     }
 
     companion object {
+
         @JvmStatic
         fun newInstance() =
-            SignUpUserInfoFragment().apply {
+            EditProfileRequiredInfoFragment().apply {
 
             }
     }

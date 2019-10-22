@@ -1,7 +1,8 @@
-package com.mashup.torchlight
+package com.mashup.torchlight.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.mashup.torchlight.R
 
 class MainActivity : AppCompatActivity() {
 

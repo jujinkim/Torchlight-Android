@@ -1,4 +1,4 @@
-package com.mashup.torchlight.mypage
+package com.mashup.torchlight.ui.mypage
 
 import androidx.lifecycle.ViewModel
 

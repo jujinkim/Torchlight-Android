@@ -1,12 +1,13 @@
-package com.mashup.torchlight
+package com.mashup.torchlight.ui.signup
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.mashup.torchlight.R
 
-class NotifyAgreementActivity : AppCompatActivity() {
+class SignUpActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_notify_agreement)
+        setContentView(R.layout.activity_sign_up)
     }
 }
