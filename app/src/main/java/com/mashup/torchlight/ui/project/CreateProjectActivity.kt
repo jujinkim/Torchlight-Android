@@ -1,4 +1,4 @@
-package com.mashup.torchlight.project
+package com.mashup.torchlight.ui.project
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
