@@ -16,7 +16,7 @@
         android:layout_height="match_parent">
 
         <include
-            android:id="@+id/include"
+            android:id="@+id/action_bar_title"
             layout="@layout/item_globar_top"
             android:layout_width="0dp"
             android:layout_height="@dimen/global_top_bar_hight"
@@ -26,10 +26,33 @@
             bind:projectVM="@{projectVM}" />
 
         <include
+            android:id="@+id/item_create_project_msg"
+            layout="@layout/item_create_project_msg"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/create_project_start_margin"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="@dimen/create_project_start_margin"
+            bind:layout_constraintEnd_toEndOf="parent"
+            bind:layout_constraintStart_toStartOf="parent"
+            bind:layout_constraintTop_toBottomOf="@+id/action_bar_title" />
+
+        <androidx.viewpager.widget.ViewPager
+            android:layout_width="0dp"
+            android:layout_height="214dp"
+            android:layout_marginTop="40dp"
+            bind:layout_constraintEnd_toEndOf="parent"
+            bind:layout_constraintStart_toStartOf="parent"
+            bind:layout_constraintTop_toBottomOf="@id/item_create_project_msg" />
+
+        <include
+            android:id="@+id/btnBottom"
             layout="@layout/item_btn_bottom"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             bind:layout_constraintBottom_toBottomOf="parent"
             bind:projectVM="@{projectVM}" />
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

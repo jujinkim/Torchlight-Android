@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.mashup.torchlight.R
 
-class CreateProjectCategotyFragment : Fragment() {
+class CreateProjectCategoryFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,7 +26,7 @@ class CreateProjectCategotyFragment : Fragment() {
     companion object {
         @JvmStatic
         fun newInstance() =
-            CreateProjectCategotyFragment().apply {
+            CreateProjectCategoryFragment().apply {
             }
     }
 }
