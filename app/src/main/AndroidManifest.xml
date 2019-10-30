@@ -9,13 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".project.CreateProjectActivity"></activity>
         <activity android:name=".ui.preferences.PreferencesActivity" />
         <activity android:name=".ui.mypage.EditProfileActivity" />
         <activity android:name=".ui.mypage.MyPageActivity" />
         <activity android:name=".ui.mypage.CreateProfileActivity" />
         <activity android:name=".ui.NotifyAgreementActivity" />
-        <activity android:name=".ui.signup.SignUpActivity" />
-        <activity android:name=".ui.MainActivity">
+        <activity android:name=".ui.MainActivity" />
+        <activity android:name=".ui.signup.SignUpActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />
