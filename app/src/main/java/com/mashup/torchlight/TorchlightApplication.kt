@@ -39,7 +39,7 @@ class TorchlightApplication : Application() {
             //context를 koin container에 추가합니다.
             androidContext(this@TorchlightApplication)
 
-            //Module을 로그합니다.
+            //module을 로딩합니다.
             modules(
                 listOf(
                     networkModule, viewModelModule

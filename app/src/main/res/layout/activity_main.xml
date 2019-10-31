@@ -7,7 +7,7 @@
 
         <variable
             name="mainVM"
-            type="com.mashup.torchlight.viewmodel.ProjectViewModel" />
+            type="com.mashup.torchlight.ui.main.MainViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
