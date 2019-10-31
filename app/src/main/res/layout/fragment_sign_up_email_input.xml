@@ -2,16 +2,26 @@
 <layout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="signup"
+            type="com.mashup.torchlight.model.SignUpModel" />
+    </data>
+
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".ui.signup.SignUpEmailAuthFragment">
 
-        <!-- TODO: Update blank fragment layout -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="@string/hello_blank_fragment" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@{signup.name}"
+            android:inputType="textEmailAddress" />
 
     </FrameLayout>
 </layout>
