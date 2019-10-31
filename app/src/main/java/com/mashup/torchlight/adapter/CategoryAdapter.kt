@@ -25,7 +25,7 @@ class CategoryAdapter(private val mItems: MutableList<String>) : RecyclerView.Ad
 
     inner class DivItemViewHolder constructor(itemView: View) : RecyclerView.ViewHolder
         (itemView) {
-        private val text: TextView = itemView.findViewById(R.id.text)
+        private val text: TextView = itemView.findViewById(R.id.tvCategoryItem)
 
         fun onBind(position: Int) {
             text.text = mItems[position]

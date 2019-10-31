@@ -1,20 +1,19 @@
-<?xml version="1.0" encoding="utf-8"?><!--<layout xmlns:android="http://schemas.android.com/apk/res/android"-->
-<!--    xmlns:app="http://schemas.android.com/apk/res-auto">-->
-
-<!--    <data>-->
-
-<!--        <variable-->
-<!--            name="projectVM"-->
-<!--            type="com.mashup.torchlight.viewmodel.ProjectViewModel" />-->
-<!--    </data>-->
-
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="projectVM"
+            type="com.mashup.torchlight.viewmodel.ProjectViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-    tools:context=".ui.project.CreateProjectActivity">
+        tools:context=".ui.project.CreateProjectActivity">
 
         <include
             android:id="@+id/action_bar_title"
@@ -23,8 +22,8 @@
             android:layout_height="@dimen/global_top_bar_hight"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            app:projectVM="@{projectVM}"
             app:layout_constraintTop_toTopOf="parent" />
-    <!--            app:projectVM="@{projectVM}"-->
 
         <include
             android:id="@+id/item_create_project_msg"
@@ -32,37 +31,38 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/create_project_start_margin"
-            android:layout_marginTop="40dp"
             android:layout_marginEnd="@dimen/create_project_start_margin"
+            android:layout_marginTop="40dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/action_bar_title" />
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvCategory"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/create_project_start_margin"
+            android:layout_marginEnd="@dimen/create_project_start_margin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/item_create_project_msg" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvCategory"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/item_create_project_msg" />
+        <com.mashup.torchlight.ui.project.CustomThreeBtn
+            android:id="@+id/btnSelectThree"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/create_project_start_margin"
+            android:layout_marginEnd="@dimen/create_project_start_margin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rvCategory" />
 
-    <com.mashup.torchlight.ui.project.CustomThreeBtn
-        android:id="@+id/btnSelectThree"
-        android:layout_width="0dp"
-        android:layout_height="140dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/rvCategory" />
-
-
-    <include
+        <include
             android:id="@+id/btnBottom"
             layout="@layout/item_btn_bottom"
             android:layout_width="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent" />
-
-
-
-</androidx.constraintlayout.widget.ConstraintLayout><!--</layout>-->
+            app:projectVM="@{projectVM}" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
