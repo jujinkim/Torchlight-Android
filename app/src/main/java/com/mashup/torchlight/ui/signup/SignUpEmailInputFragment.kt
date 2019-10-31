@@ -18,7 +18,7 @@ class SignUpEmailInputFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.sign_up_email_auth_fragment, container, false)
+        return inflater.inflate(R.layout.fragment_sign_up_email_auth, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

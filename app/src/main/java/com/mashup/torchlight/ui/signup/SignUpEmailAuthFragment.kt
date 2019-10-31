@@ -20,7 +20,7 @@ class SignUpEmailAuthFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_sign_up_email_auth_input, container, false)
+        return inflater.inflate(R.layout.fragment_sign_up_email_input, container, false)
     }
 
     companion object {
