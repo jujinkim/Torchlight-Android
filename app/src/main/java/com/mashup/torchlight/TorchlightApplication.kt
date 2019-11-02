@@ -19,7 +19,6 @@ class TorchlightApplication : Application() {
     }
 
     private fun setupTimber() {
-        //디버깅 버전에서만 Timber 로그를 남깁니다.
         if (BuildConfig.DEBUG) {
             Timber.plant(Timber.DebugTree())
         }
@@ -27,7 +26,6 @@ class TorchlightApplication : Application() {
 
     private fun setupKoin() {
         startKoin {
-            //디버깅 버전에서만 코인 로그를 남깁니다.
             logger(
                 if (BuildConfig.DEBUG) {
                     AndroidLogger()
@@ -36,10 +34,8 @@ class TorchlightApplication : Application() {
                 }
             )
 
-            //context를 koin container에 추가합니다.
             androidContext(this@TorchlightApplication)
 
-            //module을 로딩합니다.
             modules(
                 listOf(
                     networkModule, viewModelModule
