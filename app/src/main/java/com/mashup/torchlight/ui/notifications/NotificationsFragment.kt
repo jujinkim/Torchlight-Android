@@ -1,4 +1,4 @@
-package com.mashup.torchlight.ui.main.notifications
+package com.mashup.torchlight.ui.notifications
 
 import android.os.Bundle
 import com.mashup.torchlight.R

@@ -1,18 +1,18 @@
-package com.mashup.torchlight.ui.main.home
+package com.mashup.torchlight.ui.myproject
 
 import android.os.Bundle
 import com.mashup.torchlight.R
-import com.mashup.torchlight.databinding.FragmentHomeBinding
+import com.mashup.torchlight.databinding.FragmentMyProjectBinding
 import com.mashup.torchlight.ui.base.BaseFragment
 
-class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
+class MyProjectFragment : BaseFragment<FragmentMyProjectBinding>(R.layout.fragment_my_project) {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
     }
 
     companion object {
-        fun newInstance() = HomeFragment()
+        fun newInstance() = MyProjectFragment()
     }
 
 }
