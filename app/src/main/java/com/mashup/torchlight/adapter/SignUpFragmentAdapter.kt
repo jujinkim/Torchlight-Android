@@ -6,27 +6,26 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.mashup.torchlight.ui.signup.SignUpEmailAuthFragment
-import com.mashup.torchlight.ui.signup.SignUpEmailInputFragment
-import com.mashup.torchlight.ui.signup.SignUpSuccessFragment
-import com.mashup.torchlight.ui.signup.SignUpUserInfoFragment
+import com.mashup.torchlight.ui.signup.*
 
-class SignUpFragmentAdapter(fragmentManager: FragmentManager, lifecycle: Lifecycle) :
-    FragmentStateAdapter(fragmentManager, lifecycle) {
-    private val fragmentList = SparseArray<Fragment>();
+class SignUpFragmentAdapter(
+    fragmentManager: FragmentManager,
+    lifecycle: Lifecycle,
+    private val movePageListener: SignUpActivity.ISignUpMovePageListener
+) : FragmentStateAdapter(fragmentManager, lifecycle) {
 
     override fun getItemCount(): Int {
-        return fragmentList.size
+        return 4
     }
 
     override fun createFragment(position: Int): Fragment {
         return when (position) {
-            POS_SIGNUP_EMAIL_INPUT -> SignUpEmailInputFragment.newInstance()
-            POS_SIGNUP_EMAIL_AUTH -> SignUpEmailAuthFragment.newInstance()
-            POS_SIGNUP_EMAIL_USERINFO -> SignUpUserInfoFragment.newInstance()
-            POS_SIGNUP_EMAIL_SUCCESS -> SignUpSuccessFragment.newInstance()
+            POS_SIGNUP_EMAIL_INPUT -> SignUpEmailInputFragment.newInstance(movePageListener)
+            POS_SIGNUP_EMAIL_AUTH -> SignUpEmailAuthFragment.newInstance(movePageListener)
+            POS_SIGNUP_EMAIL_USERINFO -> SignUpUserInfoFragment.newInstance(movePageListener)
+            POS_SIGNUP_EMAIL_SUCCESS -> SignUpSuccessFragment.newInstance(movePageListener)
 
-            else -> SignUpEmailInputFragment.newInstance()  // bullshit. just return anything
+            else -> SignUpEmailInputFragment.newInstance(movePageListener)  // bullshit. just return anything
         }
     }
 
