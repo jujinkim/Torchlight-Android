@@ -1,27 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
         <variable
             name="signup"
-            type="com.mashup.torchlight.model.SignUpModel" />
+            type="com.mashup.torchlight.viewmodel.SignUpViewModel" />
     </data>
 
-    <FrameLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".ui.signup.SignUpEmailAuthFragment">
+        android:layout_height="match_parent">
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/hello_blank_fragment" />
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@{signup.name}"
-            android:inputType="textEmailAddress" />
+            android:layout_height="wrap_content"
+            tools:context=".ui.signup.SignUpEmailAuthFragment"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:orientation="vertical">
 
-    </FrameLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/signup_email" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+                <EditText
+                    android:id="@+id/etEmail"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@{signup.data.emailAddress}"
+                    android:inputType="textEmailAddress" />
+                <Button
+                    android:id="@+id/btnChkDuplicate"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:text="@string/signup_check_duplicated" />
+            </LinearLayout>
+            
+            <Button
+                android:id="@+id/btnSendAuthCode"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:enabled="@{signup.sendAuthBtnEnabled}"
+                android:text="@string/signup_send_auth_code" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </layout>

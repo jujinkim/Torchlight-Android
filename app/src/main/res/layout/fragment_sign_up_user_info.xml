@@ -5,19 +5,40 @@
     <data>
         <variable
             name="signup"
-            type="com.mashup.torchlight.model.SignUpModel" />
+            type="com.mashup.torchlight.viewmodel.SignUpViewModel" />
     </data>
 
-    <FrameLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.signup.SignUpUserInfoFragment">
+        tools:context=".ui.signup.SignUpUserInfoFragment"
+        android:orientation="vertical">
 
-        <!-- TODO: Update blank fragment layout -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="@string/hello_blank_fragment" />
 
-    </FrameLayout>
+        <EditText
+            android:id="@+id/tvName"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@{signup.data.name}"
+            android:inputType="textEmailAddress" />
+
+        <EditText
+            android:id="@+id/tvPasswd"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@{signup.data.passwd}"
+            android:inputType="textPassword" />
+
+        <EditText
+            android:id="@+id/tvPasswd2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@{signup.data.passwdConfirm}"
+            android:inputType="textPassword" />
+
+    </LinearLayout>
 </layout>
