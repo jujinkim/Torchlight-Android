@@ -1,6 +1,5 @@
 package com.mashup.torchlight.ui.signup
 
-import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,30 +7,31 @@ import android.view.ViewGroup
 
 import com.mashup.torchlight.R
 import com.mashup.torchlight.databinding.FragmentSignUpEmailInputBinding
-import com.mashup.torchlight.ui.base.BaseFragment
-import com.mashup.torchlight.viewmodel.SignUpViewModel
+import kotlinx.android.synthetic.main.fragment_sign_up_email_input.*
 
-class SignUpEmailInputFragment
-    : BaseFragment<FragmentSignUpEmailInputBinding>(R.layout.fragment_sign_up_email_input) {
-
-    private lateinit var viewModel: SignUpViewModel
+class SignUpEmailInputFragment(private val movePageListener: SignUpActivity.ISignUpMovePageListener)
+    : SignUpBaseFragment<FragmentSignUpEmailInputBinding>(R.layout.fragment_sign_up_email_input, movePageListener) {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(SignUpViewModel::class.java)
+
+        btnChkDuplicate.setOnClickListener { viewModel.checkDuplicatedEmail() }
+        btnSendAuthCode.setOnClickListener { movePageListener.moveNextPage() }
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return super.onCreateView(inflater, container, savedInstanceState)
+        val view = super.onCreateView(inflater, container, savedInstanceState)
 
+        return view
     }
 
     companion object {
         @JvmStatic
-        fun newInstance() = SignUpEmailInputFragment()
+        fun newInstance(movePageListener: SignUpActivity.ISignUpMovePageListener) =
+            SignUpEmailInputFragment(movePageListener)
     }
 
 

@@ -1,25 +1,18 @@
 package com.mashup.torchlight.ui.signup
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.ViewModelProviders
 
 import com.mashup.torchlight.R
 import com.mashup.torchlight.databinding.FragmentSignUpUserInfoBinding
-import com.mashup.torchlight.ui.base.BaseFragment
-import com.mashup.torchlight.viewmodel.SignUpViewModel
 
-class SignUpUserInfoFragment
-    : BaseFragment<FragmentSignUpUserInfoBinding>(R.layout.fragment_sign_up_user_info) {
-
-    private lateinit var viewModel: SignUpViewModel
+class SignUpUserInfoFragment(private val movePageListener: SignUpActivity.ISignUpMovePageListener)
+    : SignUpBaseFragment<FragmentSignUpUserInfoBinding>(R.layout.fragment_sign_up_user_info, movePageListener) {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(SignUpViewModel::class.java)
     }
 
     override fun onCreateView(
@@ -32,7 +25,7 @@ class SignUpUserInfoFragment
 
     companion object {
         @JvmStatic
-        fun newInstance() =
-            SignUpUserInfoFragment()
+        fun newInstance(movePageListener: SignUpActivity.ISignUpMovePageListener) =
+            SignUpUserInfoFragment(movePageListener)
     }
 }
