@@ -4,7 +4,7 @@ data class SignUpModel(
     var emailAddress: String,
     var authCode: String,
     var name: String,
-    var encryptedPassword: String,
-    var encryptedPassword2: String,
+    var passwd: String,
+    var passwdConfirm: String,
     var isAgreedDisclaimer: Boolean
 )
