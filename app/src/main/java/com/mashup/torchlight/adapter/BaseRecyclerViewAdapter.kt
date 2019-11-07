@@ -1,10 +1,11 @@
 
-package com.mashup.torchlight.ui.base
+package com.mashup.torchlight.adapter
 
 import android.view.ViewGroup
 import androidx.annotation.LayoutRes
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.RecyclerView
+import com.mashup.torchlight.ui.base.BaseBindingViewHolder
 
 abstract class BaseRecyclerViewAdapter<ITEM : Any, B : ViewDataBinding>(
     @LayoutRes private val layoutRes: Int,

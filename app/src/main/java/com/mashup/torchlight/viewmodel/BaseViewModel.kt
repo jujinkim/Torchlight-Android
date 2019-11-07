@@ -1,4 +1,4 @@
-package com.mashup.torchlight.ui.base
+package com.mashup.torchlight.viewmodel
 
 import androidx.lifecycle.ViewModel
 import io.reactivex.disposables.CompositeDisposable
