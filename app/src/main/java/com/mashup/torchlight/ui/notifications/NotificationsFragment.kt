@@ -5,7 +5,8 @@ import com.mashup.torchlight.R
 import com.mashup.torchlight.databinding.FragmentNotificationsBinding
 import com.mashup.torchlight.ui.base.BaseFragment
 
-class NotificationsFragment : BaseFragment<FragmentNotificationsBinding>(R.layout.fragment_home) {
+class NotificationsFragment :
+    BaseFragment<FragmentNotificationsBinding>(R.layout.fragment_notifications) {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
