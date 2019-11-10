@@ -24,5 +24,6 @@
     <string name="signup_im_agree_disclaimer_msg">Check here to agree terms&amp;condition and private policy.</string>
     <string name="signup_register">Register</string>
     <string name="signup_register_done">Register successfully</string>
+    <string name="signup_email_is_invalid">Email address is not valid.</string>
 
 </resources>

@@ -36,7 +36,7 @@
                     android:id="@+id/etAuthCode"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:text="@{signup.data.authCode}"
+                    android:text="@={signup.data.authCode}"
                     android:inputType="textEmailAddress"
                     android:layout_weight="1" />
                 <TextView
