@@ -7,5 +7,12 @@
     <color name="black">#000</color>
     <color name="gray">#979797</color>
     <color name="right_gray">#d8d8d8</color>
+
     <color name="white">#fff</color>
+    <color name="white_5">#0cffffff</color>
+    <color name="white_11">#1cffffff</color>
+    <color name="white_60">#99ffffff</color>
+
+    <color name="salmon">#ff8269</color>
+
 </resources>
