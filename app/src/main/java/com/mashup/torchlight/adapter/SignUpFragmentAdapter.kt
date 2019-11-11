@@ -1,7 +1,5 @@
 package com.mashup.torchlight.adapter
 
-import android.util.SparseArray
-import androidx.core.util.size
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
@@ -20,19 +18,18 @@ class SignUpFragmentAdapter(
 
     override fun createFragment(position: Int): Fragment {
         return when (position) {
-            POS_SIGNUP_EMAIL_INPUT -> SignUpEmailInputFragment.newInstance(movePageListener)
-            POS_SIGNUP_EMAIL_AUTH -> SignUpEmailAuthFragment.newInstance(movePageListener)
-            POS_SIGNUP_EMAIL_USERINFO -> SignUpUserInfoFragment.newInstance(movePageListener)
-            POS_SIGNUP_EMAIL_SUCCESS -> SignUpSuccessFragment.newInstance(movePageListener)
+            PagePos.EMAIL_INPUT.pos -> SignUpEmailInputFragment.newInstance(movePageListener)
+            PagePos.EMAIL_AUTH.pos -> SignUpEmailAuthFragment.newInstance(movePageListener)
+            PagePos.EMAIL_USERINFO.pos -> SignUpUserInfoFragment.newInstance(movePageListener)
+            PagePos.EMAIL_SUCCESS.pos -> SignUpSuccessFragment.newInstance(movePageListener)
 
             else -> SignUpEmailInputFragment.newInstance(movePageListener)  // bullshit. just return anything
         }
     }
 
     companion object {
-        private const val POS_SIGNUP_EMAIL_INPUT = 0
-        private const val POS_SIGNUP_EMAIL_AUTH = 1
-        private const val POS_SIGNUP_EMAIL_USERINFO = 2
-        private const val POS_SIGNUP_EMAIL_SUCCESS = 3
+        enum class PagePos(val pos: Int) {
+            EMAIL_INPUT(0), EMAIL_AUTH(1), EMAIL_USERINFO(2), EMAIL_SUCCESS(3)
+        }
     }
 }
