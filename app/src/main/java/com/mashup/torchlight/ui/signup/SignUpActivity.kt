@@ -30,6 +30,8 @@ class SignUpActivity : BaseActivity<ActivitySignUpBinding>(R.layout.activity_sig
 
         signUpAdapter = SignUpFragmentAdapter(supportFragmentManager, lifecycle, movePageListener)
         vpSignUp.adapter = signUpAdapter
+        vpSignUp.isUserInputEnabled = false
+        vpSignUp.offscreenPageLimit = signUpAdapter.itemCount
     }
 
 

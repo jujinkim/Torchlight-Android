@@ -9,7 +9,7 @@
     <string name="common_cancel">Cancel</string>
     <string name="common_yes">Yes</string>
     <string name="common_no">No</string>
-    <string name="common_see">See</string>
+    <string name="common_watch">Watch</string>
 
     <!-- Sign Up -->
     <string name="signup_email">Email address</string>
@@ -18,11 +18,13 @@
     <string name="signup_send_auth_code">Send auth code</string>
     <string name="signup_auto_code">Auto code</string>
     <string name="signup_send_again">Send code again</string>
+    <string name="signup_name">Name</string>
     <string name="signup_password">Password</string>
     <string name="signup_password_confirm">Password confirm</string>
     <string name="signup_agree_disclaimer">Agree disclaimer</string>
     <string name="signup_im_agree_disclaimer_msg">Check here to agree terms&amp;condition and private policy.</string>
     <string name="signup_register">Register</string>
     <string name="signup_register_done">Register successfully</string>
+    <string name="signup_email_is_invalid">Email address is not valid.</string>
 
 </resources>

@@ -1,33 +1,51 @@
 package com.mashup.torchlight.viewmodel
 
-import androidx.databinding.ObservableField
+import android.util.Patterns
+import androidx.lifecycle.MutableLiveData
 import com.mashup.torchlight.model.SignUpModel
 import com.mashup.torchlight.work.SignUpWork
 
 class SignUpViewModel : BaseViewModel() {
-    var data: SignUpModel =
-        SignUpModel("","","","","",false)
-
-    val sendAuthBtnEnabled = ObservableField(false)
+    val data = MutableLiveData<SignUpModel>()
+    val sendAuthBtnEnabled = MutableLiveData<Boolean>()
 
     val signUpWork = SignUpWork()
 
-    fun isPasswordConfirmed() : Boolean {
-        return data.passwd == data.passwdConfirm
+    init {
+        data.value = SignUpModel()
     }
 
-    fun isAuthCodeSame(input: String): Boolean {
-        return input == data.authCode
+    fun isPasswordConfirmed() : Boolean {
+        return data.value?.let {
+            it.passwd == it.passwdConfirm
+        } ?: false
+    }
+
+    fun isAuthCodeSame(code: String): Boolean {
+        return data.value?.let {
+            code == it.authCode
+        } ?: false
     }
 
     fun isBasicInfoFilled(): Boolean {
-        return data.emailAddress.isNotEmpty()
-                && data.name.isNotEmpty()
-                && data.passwd.isNotEmpty()
+        return data.value?.let {
+            return it.emailAddress.isNotEmpty()
+                    && it.name.isNotEmpty()
+                    && it.passwd.isNotEmpty()
+        } ?: false
     }
 
-    fun checkDuplicatedEmail() {
-        sendAuthBtnEnabled.set(!signUpWork.isDuplicatedEmail(data.emailAddress))
+    fun isValidEmail() : Boolean {
+        return data.value?.let {
+            val matcher = Patterns.EMAIL_ADDRESS.matcher(it.emailAddress)
+            return@let matcher.find()
+        } ?: false
+    }
+
+    fun chkDuplicatedAndUpdateAuthBtn() {
+        sendAuthBtnEnabled.value = data.value?.let {
+             !signUpWork.isDuplicatedEmail(it.emailAddress)
+        } ?: false
     }
 
     fun isPasswordConditionMatched(): Boolean {
