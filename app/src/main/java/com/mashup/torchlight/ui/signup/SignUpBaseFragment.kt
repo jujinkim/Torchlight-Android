@@ -15,11 +15,7 @@ open class SignUpBaseFragment<B : ViewDataBinding>(
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = activity?.run {
-            val signUpVM = ViewModelProviders.of(this)[(SignUpViewModel::class.java)]
-            binding.setVariable(BR.signup, signUpVM)
-            return@run signUpVM
-        } ?: throw Exception("No activity")
+        viewModel = ViewModelProviders.of(requireActivity())[(SignUpViewModel::class.java)]
+        binding.setVariable(BR.signup, viewModel)
     }
-
 }
