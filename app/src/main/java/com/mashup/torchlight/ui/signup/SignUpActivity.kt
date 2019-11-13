@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.lifecycle.ViewModelProviders
 import com.mashup.torchlight.R
 import com.mashup.torchlight.adapter.SignUpFragmentAdapter
+import com.mashup.torchlight.adapter.SignUpFragmentAdapter.Companion.PagePos.*
 import com.mashup.torchlight.databinding.ActivitySignUpBinding
 import com.mashup.torchlight.ui.base.BaseActivity
 import com.mashup.torchlight.viewmodel.SignUpViewModel
@@ -34,13 +35,24 @@ class SignUpActivity : BaseActivity<ActivitySignUpBinding>(R.layout.activity_sig
         vpSignUp.offscreenPageLimit = signUpAdapter.itemCount
     }
 
+    override fun onBackPressed() {
+        if (vpSignUp.currentItem > 0) {
+            moveToPrevStep()
+        } else {
+            super.onBackPressed()
+        }
+    }
 
     fun moveToNextStep() {
         vpSignUp.setCurrentItem(vpSignUp.currentItem+1, true)
     }
 
     fun moveToPrevStep() {
+        vpSignUp.setCurrentItem(vpSignUp.currentItem - 1, true)
 
+        if (vpSignUp.currentItem == EMAIL_AUTH.pos) {
+            vpSignUp.setCurrentItem(vpSignUp.currentItem - 1, true)
+        }
     }
 
     interface ISignUpMovePageListener {
