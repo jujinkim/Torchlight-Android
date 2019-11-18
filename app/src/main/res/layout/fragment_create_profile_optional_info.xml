@@ -2,6 +2,12 @@
 <layout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="profile"
+            type="com.mashup.torchlight.viewmodel.ProfileViewModel" />
+    </data>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -13,7 +19,7 @@
             android:layout_weight="1">
 
             <LinearLayout
-                tools:context=".ui.mypage.EditProfileRequiredInfoFragment"
+                tools:context=".ui.mypage.EditProfileMandatoryInfoFragment"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
@@ -45,10 +51,15 @@
                         android:text="@string/profile_input"/>
                 </LinearLayout>
                 <HorizontalScrollView
-                    android:id="@+id/sv_profile_interests"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:minHeight="@dimen/profile_selected_slot_height"/>
+                    android:minHeight="@dimen/profile_selected_slot_height">
+                    <LinearLayout
+                        android:id="@+id/layout_profile_interests"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"/>
+                </HorizontalScrollView>
 
                 <!-- Passion -->
                 <TextView
@@ -56,27 +67,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="27dp"
                     android:text="@string/profile_passion"/>
-                <LinearLayout
+                <com.mashup.torchlight.ui.project.CustomThreeBtn
+                    android:id="@+id/select_passion_three_btn"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/profile_selected_slot_height"
-                    android:orientation="horizontal">
-                    <Button
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="0.3"
-                        android:text="@string/profile_grd1" />
-                    <Button
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="0.3"
-                        android:text="@string/profile_grd2" />
-                    <Button
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="0.3"
-                        android:text="@string/profile_grd3" />
-
-                </LinearLayout>
+                    android:layout_height="wrap_content" />
 
                 <!-- Category -->
                 <TextView
@@ -85,10 +79,15 @@
                     android:layout_marginTop="36dp"
                     android:text="@string/profile_selected_category"/>
                 <HorizontalScrollView
-                    android:id="@+id/sv_profile_selected_category"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:minHeight="@dimen/profile_selected_slot_height"/>
+                    android:minHeight="@dimen/profile_selected_slot_height">
+                    <LinearLayout
+                        android:id="@+id/layout_profile_selected_category"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"/>
+                </HorizontalScrollView>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -141,7 +140,6 @@
                 android:layout_weight="0.5"
                 android:text="@string/common_next"/>
         </LinearLayout>
-
 
     </LinearLayout>
 </layout>

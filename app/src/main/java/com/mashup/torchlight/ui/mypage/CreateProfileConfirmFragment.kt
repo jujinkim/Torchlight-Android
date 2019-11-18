@@ -7,8 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 
 import com.mashup.torchlight.R
+import com.mashup.torchlight.databinding.FragmentCreateProfileConfirmBinding
 
-class CreateProfileConfirmFragment : Fragment() {
+class CreateProfileConfirmFragment(private val movePageListener: CreateProfileActivity.IMovePageListener)
+    : ProfileBaseFragment<FragmentCreateProfileConfirmBinding>(R.layout.fragment_create_profile_confirm, movePageListener) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,15 +22,13 @@ class CreateProfileConfirmFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_create_profile_confirm, container, false)
+        return super.onCreateView(inflater, container, savedInstanceState)
     }
 
 
     companion object {
         @JvmStatic
-        fun newInstance() =
-            CreateProfileConfirmFragment().apply {
-
-            }
+        fun newInstance(movePageListener: CreateProfileActivity.IMovePageListener) =
+            CreateProfileConfirmFragment(movePageListener)
     }
 }
