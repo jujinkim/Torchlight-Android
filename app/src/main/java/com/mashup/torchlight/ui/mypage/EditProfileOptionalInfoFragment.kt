@@ -9,8 +9,8 @@ import android.view.ViewGroup
 import com.mashup.torchlight.R
 import com.mashup.torchlight.databinding.FragmentCreateProfileConfirmBinding
 
-class EditProfileOptionalInfoFragment(movePageListener: CreateProfileActivity.IMovePageListener?)
-    : ProfileBaseFragment<FragmentCreateProfileConfirmBinding>(R.layout.fragment_create_profile_mandatory_info, movePageListener) {
+class EditProfileOptionalInfoFragment
+    : ProfileBaseFragment<FragmentCreateProfileConfirmBinding>(R.layout.fragment_create_profile_mandatory_info) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,11 +27,12 @@ class EditProfileOptionalInfoFragment(movePageListener: CreateProfileActivity.IM
 
     companion object {
         @JvmStatic
-        fun newInstance() =
-            EditProfileOptionalInfoFragment(null)
-
-        @JvmStatic
-        fun newInstance(movePageListener: CreateProfileActivity.IMovePageListener?) =
-            EditProfileOptionalInfoFragment(movePageListener)
+        fun newInstance(
+            movePageListener: CreateProfileActivity.IMovePageListener? = null
+        ): EditProfileOptionalInfoFragment {
+            val fragment = EditProfileOptionalInfoFragment()
+            fragment.movePage = movePageListener
+            return fragment
+        }
     }
 }

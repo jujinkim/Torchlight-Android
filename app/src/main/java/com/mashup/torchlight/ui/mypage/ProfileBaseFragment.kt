@@ -8,9 +8,9 @@ import com.mashup.torchlight.ui.base.BaseFragment
 import com.mashup.torchlight.viewmodel.ProfileViewModel
 
 open class ProfileBaseFragment<B : ViewDataBinding>(
-    private val layoutId: Int,
-    protected val movePage: CreateProfileActivity.IMovePageListener?
+    private val layoutId: Int
 ) : BaseFragment<B>(layoutId) {
+    protected var movePage: CreateProfileActivity.IMovePageListener? = null
     protected lateinit var viewModel: ProfileViewModel
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

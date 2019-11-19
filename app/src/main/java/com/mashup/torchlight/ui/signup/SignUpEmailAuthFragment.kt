@@ -8,8 +8,8 @@ import android.view.ViewGroup
 import com.mashup.torchlight.R
 import com.mashup.torchlight.databinding.FragmentSignUpEmailAuthBinding
 
-class SignUpEmailAuthFragment(private val movePageListener: SignUpActivity.ISignUpMovePageListener)
-    : SignUpBaseFragment<FragmentSignUpEmailAuthBinding>(R.layout.fragment_sign_up_email_auth, movePageListener) {
+class SignUpEmailAuthFragment()
+    : SignUpBaseFragment<FragmentSignUpEmailAuthBinding>(R.layout.fragment_sign_up_email_auth) {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
@@ -20,13 +20,17 @@ class SignUpEmailAuthFragment(private val movePageListener: SignUpActivity.ISign
         savedInstanceState: Bundle?
     ): View? {
         return super.onCreateView(inflater, container, savedInstanceState)
-
     }
 
     companion object {
         @JvmStatic
-        fun newInstance(movePageListener: SignUpActivity.ISignUpMovePageListener) =
-            SignUpEmailAuthFragment(movePageListener)
+        fun newInstance(
+            movePageListener: SignUpActivity.ISignUpMovePageListener
+        ): SignUpEmailAuthFragment {
+            val fragment = SignUpEmailAuthFragment()
+            fragment.movePage = movePageListener
+            return fragment
+        }
     }
 }
 

@@ -8,8 +8,8 @@ import android.view.ViewGroup
 import com.mashup.torchlight.R
 import com.mashup.torchlight.databinding.FragmentSignUpSuccessBinding
 
-class SignUpSuccessFragment(private val movePageListener: SignUpActivity.ISignUpMovePageListener)
-    : SignUpBaseFragment<FragmentSignUpSuccessBinding>(R.layout.fragment_sign_up_success, movePageListener) {
+class SignUpSuccessFragment()
+    : SignUpBaseFragment<FragmentSignUpSuccessBinding>(R.layout.fragment_sign_up_success) {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
@@ -19,13 +19,17 @@ class SignUpSuccessFragment(private val movePageListener: SignUpActivity.ISignUp
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         return super.onCreateView(inflater, container, savedInstanceState)
     }
 
     companion object {
         @JvmStatic
-        fun newInstance(movePageListener: SignUpActivity.ISignUpMovePageListener) =
-            SignUpSuccessFragment(movePageListener)
+        fun newInstance(
+            movePageListener: SignUpActivity.ISignUpMovePageListener
+        ): SignUpSuccessFragment {
+            val fragment = SignUpSuccessFragment()
+            fragment.movePage = movePageListener
+            return fragment
+        }
     }
 }

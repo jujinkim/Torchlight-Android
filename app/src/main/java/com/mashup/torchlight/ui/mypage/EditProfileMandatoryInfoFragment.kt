@@ -11,8 +11,8 @@ import com.mashup.torchlight.databinding.FragmentCreateProfileConfirmBinding
 import com.mashup.torchlight.ui.customview.ItemSelectorData
 import kotlinx.android.synthetic.main.fragment_create_profile_mandatory_info.*
 
-class EditProfileMandatoryInfoFragment(movePageListener: CreateProfileActivity.IMovePageListener?)
-    : ProfileBaseFragment<FragmentCreateProfileConfirmBinding>(R.layout.fragment_create_profile_mandatory_info, movePageListener) {
+class EditProfileMandatoryInfoFragment
+    : ProfileBaseFragment<FragmentCreateProfileConfirmBinding>(R.layout.fragment_create_profile_mandatory_info) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,11 +50,12 @@ class EditProfileMandatoryInfoFragment(movePageListener: CreateProfileActivity.I
 
     companion object {
         @JvmStatic
-        fun newInstance() =
-            EditProfileMandatoryInfoFragment(null)
-
-        @JvmStatic
-        fun newInstance(movePageListener: CreateProfileActivity.IMovePageListener) =
-            EditProfileMandatoryInfoFragment(movePageListener)
+        fun newInstance(
+            movePageListener: CreateProfileActivity.IMovePageListener? = null
+        ): EditProfileMandatoryInfoFragment {
+            val fragment = EditProfileMandatoryInfoFragment()
+            fragment.movePage = movePageListener
+            return fragment
+        }
     }
 }

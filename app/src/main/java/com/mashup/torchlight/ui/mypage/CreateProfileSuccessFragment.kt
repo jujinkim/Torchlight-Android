@@ -9,8 +9,8 @@ import android.view.ViewGroup
 import com.mashup.torchlight.R
 import com.mashup.torchlight.databinding.FragmentCreateProfileConfirmBinding
 
-class CreateProfileSuccessFragment(movePageListener: CreateProfileActivity.IMovePageListener) :
-    ProfileBaseFragment<FragmentCreateProfileConfirmBinding>(R.layout.fragment_create_profile_success, movePageListener) {
+class CreateProfileSuccessFragment() :
+    ProfileBaseFragment<FragmentCreateProfileConfirmBinding>(R.layout.fragment_create_profile_success) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,7 +28,12 @@ class CreateProfileSuccessFragment(movePageListener: CreateProfileActivity.IMove
 
     companion object {
         @JvmStatic
-        fun newInstance(movePageListener: CreateProfileActivity.IMovePageListener) =
-            CreateProfileSuccessFragment(movePageListener)
+        fun newInstance(
+            movePageListener: CreateProfileActivity.IMovePageListener
+        ): CreateProfileSuccessFragment {
+            val fragment = CreateProfileSuccessFragment()
+            fragment.movePage = movePageListener
+            return fragment
+        }
     }
 }
