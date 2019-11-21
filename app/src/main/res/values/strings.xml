@@ -12,10 +12,10 @@
     <string name="common_see">See</string>
 
     <!-- Common main nav -->
-    <string name="common_home">홈</string>
-    <string name="common_my_project">내 프로젝트</string>
-    <string name="common_notification">알림</string>
-    <string name="common_my_page">마이페이지</string>
+    <string name="common_home">home</string>
+    <string name="common_my_project">my project</string>
+    <string name="common_notification">notice</string>
+    <string name="common_my_page">my page</string>
 
     <!-- Sign Up -->
     <string name="signup_email">Email address</string>

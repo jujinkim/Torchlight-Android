@@ -13,7 +13,6 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/black"
         tools:context=".ui.main.MainActivity">
 
         <androidx.viewpager2.widget.ViewPager2
@@ -29,7 +28,7 @@
             android:id="@+id/bnvMain"
             android:layout_width="0dp"
             android:layout_height="56dp"
-            android:background="@color/white_11"
+            android:background="@color/black"
             app:itemIconTint="@drawable/bottom_navigation_view_main_tint"
             app:itemTextColor="@drawable/bottom_navigation_view_main_tint"
             app:layout_constraintBottom_toBottomOf="parent"
