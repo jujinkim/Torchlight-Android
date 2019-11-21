@@ -11,6 +11,12 @@
     <string name="common_no">No</string>
     <string name="common_watch">Watch</string>
 
+    <!-- Common main nav -->
+    <string name="common_home">home</string>
+    <string name="common_my_project">my project</string>
+    <string name="common_notification">notice</string>
+    <string name="common_my_page">my page</string>
+
     <!-- Sign Up -->
     <string name="signup_email">Email address</string>
     <string name="signup_check_duplicated">Check duplicated</string>
