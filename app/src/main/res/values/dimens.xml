@@ -2,4 +2,6 @@
 <resources>
     <dimen name="global_top_bar_hight">56dp</dimen>
     <dimen name="create_project_start_margin">16dp</dimen>
+
+    <dimen name="profile_selected_slot_height">44dp</dimen>
 </resources>

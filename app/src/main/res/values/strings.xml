@@ -10,6 +10,10 @@
     <string name="common_yes">Yes</string>
     <string name="common_no">No</string>
     <string name="common_watch">Watch</string>
+    <string name="common_next">Next</string>
+    <string name="common_prev">Previous</string>
+    <string name="common_expand">Expand</string>
+    <string name="common_collapse">Collapse</string>
 
     <!-- Common main nav -->
     <string name="common_home">home</string>
@@ -32,5 +36,25 @@
     <string name="signup_register">Register</string>
     <string name="signup_register_done">Register successfully</string>
     <string name="signup_email_is_invalid">Email address is not valid.</string>
+
+    <!-- Profile -->
+    <string name="profile_mandatory">Mandatory profile</string>
+    <string name="profile_job">Job</string>
+    <string name="profile_occupation">Occupation</string>
+    <string name="profile_skills">Skills</string>
+    <string name="profile_detail">Detail</string>
+    <string name="profile_input">Input</string>
+    <string name="profile_optional">Optional profile</string>
+    <string name="profile_you_can_skip_by_clicking_nxt_btn">You can skip this by touching next button below the screen.</string>
+    <string name="profile_interests">Interests</string>
+    <string name="profile_passion">Passion</string>
+    <string name="profile_selected_category">Selected Category</string>
+    <string name="profile_whole_category">Whole category</string>
+    <string name="profile_url">URL</string>
+    <string name="profile_grd1">Grade 1</string>
+    <string name="profile_grd2">Grade 2</string>
+    <string name="profile_grd3">Grade 3</string>
+    <string name="profile_create_profile">Create profile</string>
+
 
 </resources>

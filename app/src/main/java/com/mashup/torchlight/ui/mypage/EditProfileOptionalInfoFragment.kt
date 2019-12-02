@@ -7,8 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 
 import com.mashup.torchlight.R
+import com.mashup.torchlight.databinding.FragmentCreateProfileConfirmBinding
 
-class EditProfileOptionalInfoFragment : Fragment() {
+class EditProfileOptionalInfoFragment
+    : ProfileBaseFragment<FragmentCreateProfileConfirmBinding>(R.layout.fragment_create_profile_mandatory_info) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,14 +22,17 @@ class EditProfileOptionalInfoFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_create_profile_optional_info, container, false)
+        return super.onCreateView(inflater, container, savedInstanceState)
     }
 
     companion object {
         @JvmStatic
-        fun newInstance() =
-            EditProfileOptionalInfoFragment().apply {
-
-            }
+        fun newInstance(
+            movePageListener: CreateProfileActivity.IMovePageListener? = null
+        ): EditProfileOptionalInfoFragment {
+            val fragment = EditProfileOptionalInfoFragment()
+            fragment.movePage = movePageListener
+            return fragment
+        }
     }
 }

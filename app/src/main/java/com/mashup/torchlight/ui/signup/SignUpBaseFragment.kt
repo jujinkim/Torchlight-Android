@@ -8,9 +8,9 @@ import com.mashup.torchlight.ui.base.BaseFragment
 import com.mashup.torchlight.viewmodel.SignUpViewModel
 
 open class SignUpBaseFragment<B : ViewDataBinding>(
-    private val layoutId: Int,
-    protected val movePage: SignUpActivity.ISignUpMovePageListener
+    private val layoutId: Int
 ) : BaseFragment<B>(layoutId) {
+    protected lateinit var movePage: SignUpActivity.ISignUpMovePageListener
     protected lateinit var viewModel: SignUpViewModel
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

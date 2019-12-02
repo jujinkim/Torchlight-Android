@@ -8,8 +8,8 @@ import android.view.ViewGroup
 import com.mashup.torchlight.R
 import com.mashup.torchlight.databinding.FragmentSignUpUserInfoBinding
 
-class SignUpUserInfoFragment(private val movePageListener: SignUpActivity.ISignUpMovePageListener)
-    : SignUpBaseFragment<FragmentSignUpUserInfoBinding>(R.layout.fragment_sign_up_user_info, movePageListener) {
+class SignUpUserInfoFragment()
+    : SignUpBaseFragment<FragmentSignUpUserInfoBinding>(R.layout.fragment_sign_up_user_info) {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
@@ -20,12 +20,16 @@ class SignUpUserInfoFragment(private val movePageListener: SignUpActivity.ISignU
         savedInstanceState: Bundle?
     ): View? {
         return super.onCreateView(inflater, container, savedInstanceState)
-
     }
 
     companion object {
         @JvmStatic
-        fun newInstance(movePageListener: SignUpActivity.ISignUpMovePageListener) =
-            SignUpUserInfoFragment(movePageListener)
+        fun newInstance(
+            movePageListener: SignUpActivity.ISignUpMovePageListener
+        ): SignUpUserInfoFragment {
+            val fragment = SignUpUserInfoFragment()
+            fragment.movePage = movePageListener
+            return fragment
+        }
     }
 }
