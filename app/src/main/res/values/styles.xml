@@ -2,16 +2,47 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimary">@color/main_400</item>
         <item name="colorPrimaryDark">@color/black</item>
         <item name="colorAccent">@color/colorAccent</item>
         <!-- No Title Bar-->
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+
+        <!-- Default components'(views') style -->
+        <item name="android:windowBackground">@color/background</item>
+        <item name="android:textColor">@color/text_secondary</item>
+        <item name="buttonStyle">@style/TorchLightButtonPrimary</item>
+        <item name="android:textViewStyle">@style/TorchLightTextView</item>
+        <item name="editTextStyle">@style/TorchLightEditText</item>
     </style>
+
     <style name="DefaultAppBarLayout" parent="Widget.Design.AppBarLayout">
         <item name="android:background">@android:color/transparent</item>
     </style>
+
+    <style name="TorchLightButtonPrimary" parent="@android:style/Widget.Material.Button">
+        <item name="android:textColor">@color/text_button</item>
+        <item name="android:background">@drawable/button_primary_background</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="TorchLightButtonSecondary" parent="@android:style/Widget.Material.Button">
+        <item name="android:textColor">@color/main_400</item>
+        <item name="android:background">@drawable/button_secondary_background</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="TorchLightTextView" parent="@android:style/Widget.Material.TextView">
+        <item name="android:textColor">@color/text_secondary</item>
+    </style>
+
+    <style name="TorchLightEditText" parent="@android:style/Widget.Material.EditText">
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textColorHint">@color/text_secondary</item>
+        <item name="android:background">@drawable/edittext_background</item>
+    </style>
+
     <style name="TitleSingleLine">
         <item name="android:textSize">20sp</item>
         <item name="android:letterSpacing">-0.02</item>
