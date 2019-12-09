@@ -3,5 +3,8 @@
     <dimen name="global_top_bar_hight">56dp</dimen>
     <dimen name="create_project_start_margin">16dp</dimen>
 
+    <!-- item project -->
+    <dimen name="item_project_height">201dp</dimen>
+    <dimen name="item_project_padding">16dp</dimen>
     <dimen name="profile_selected_slot_height">44dp</dimen>
 </resources>

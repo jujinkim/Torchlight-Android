@@ -9,7 +9,7 @@
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/black">
+        android:background="#121212">
 
         <com.google.android.material.appbar.AppBarLayout
             style="@style/DefaultAppBarLayout"
@@ -34,9 +34,16 @@
                         android:gravity="center_vertical"
                         android:orientation="horizontal">
 
+                        <ImageView
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_marginStart="21dp"
+                            android:background="@color/white" />
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
                             android:text="@string/app_name"
                             android:textColor="@color/white"
                             android:textSize="22sp"
@@ -45,10 +52,10 @@
                     </LinearLayout>
 
                     <!-- view pager -->
-                    <FrameLayout
+                    <androidx.viewpager2.widget.ViewPager2
+                        android:id="@+id/vpFragmentHomeTop"
                         android:layout_width="match_parent"
-                        android:layout_height="209dp"
-                        android:background="@color/colorAccent" />
+                        android:layout_height="209dp" />
 
                 </LinearLayout>
 
@@ -58,16 +65,18 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
                 android:layout_marginStart="@dimen/create_project_start_margin"
                 android:layout_marginEnd="@dimen/create_project_start_margin"
                 android:orientation="vertical">
 
                 <!-- search -->
-                <LinearLayout
+                <RelativeLayout
+                    android:id="@+id/btnFragmentHomeSearch"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
                     android:layout_marginBottom="6dp"
-                    android:background="@drawable/rect_black_rad_8dp"
+                    android:background="@drawable/item_card_background"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
                     android:paddingStart="@dimen/create_project_start_margin"
@@ -76,11 +85,17 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="관심있는 프로젝트를 검색해 보세요."
+                        android:text="@string/home_search_interested_project"
                         android:textColor="@color/white"
                         android:textSize="14sp" />
 
-                </LinearLayout>
+                    <ImageView
+                        android:layout_width="17dp"
+                        android:layout_height="17dp"
+                        android:layout_alignParentEnd="true"
+                        android:background="@color/white" />
+
+                </RelativeLayout>
 
                 <!-- filter -->
                 <LinearLayout
@@ -89,6 +104,18 @@
                     android:gravity="center_vertical"
                     android:orientation="horizontal">
 
+                    <Spinner
+                        android:id="@+id/spFragmentHomeFilter1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="20dp"
+                        android:spinnerMode="dialog" />
+
+                    <Spinner
+                        android:id="@+id/spFragmentHomeFilter2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:spinnerMode="dialog" />
 
                 </LinearLayout>
 
@@ -96,14 +123,14 @@
 
         </com.google.android.material.appbar.AppBarLayout>
 
-        <androidx.core.widget.NestedScrollView
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvFragmentHomeProject"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/create_project_start_margin"
             android:layout_marginEnd="@dimen/create_project_start_margin"
-            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
-
-        </androidx.core.widget.NestedScrollView>
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior" />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>
