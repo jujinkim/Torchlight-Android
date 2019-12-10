@@ -5,6 +5,8 @@ import android.graphics.Color
 import android.graphics.drawable.Drawable
 import android.graphics.drawable.GradientDrawable
 import android.util.AttributeSet
+import android.util.TypedValue
+import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -57,11 +59,11 @@ class ItemSelectorView: RecyclerView {
             isScrollable = attrTypedArr.getBoolean(R.styleable.ItemSelectorView_scrollable, true)
             displayType = attrTypedArr.getInt(R.styleable.ItemSelectorView_display_type, 1)
             borderThickness = attrTypedArr.getInt(R.styleable.ItemSelectorView_border_thickness, 2)
-            radius = attrTypedArr.getFloat(R.styleable.ItemSelectorView_radius, 20f)
+            radius = attrTypedArr.getDimension(R.styleable.ItemSelectorView_radius, 20f)
             removeBtnSize = attrTypedArr.getDimensionPixelSize(R.styleable.ItemSelectorView_remove_btn_size, 65)
-            textSize = attrTypedArr.getDimension(R.styleable.ItemSelectorView_text_size, 20f)
-            itemMargin = attrTypedArr.getInt(R.styleable.ItemSelectorView_item_margin, 30)
-            itemPadding = attrTypedArr.getInt(R.styleable.ItemSelectorView_item_padding, 30)
+            textSize = attrTypedArr.getDimensionPixelSize(R.styleable.ItemSelectorView_text_size, 20)
+            itemMargin = attrTypedArr.getDimensionPixelSize(R.styleable.ItemSelectorView_item_margin, 30)
+            itemPadding = attrTypedArr.getDimensionPixelSize(R.styleable.ItemSelectorView_item_padding, 30)
             selectedColor = attrTypedArr.getColor(R.styleable.ItemSelectorView_selected_color, primaryColor)
             deselectedColor = attrTypedArr.getColor(R.styleable.ItemSelectorView_deselected_color, whiteColor)
             selectedTextColor = attrTypedArr.getColor(R.styleable.ItemSelectorView_selected_text_color, whiteColor)
@@ -137,7 +139,7 @@ data class ItemSelectorStyle(
     var removeBtnBorderColor: Int = 0,
     var removeBtnBorderThickness: Int = 0,
     var removeBtnSize: Int = 0,
-    var textSize: Float = 10f,
+    var textSize: Int = 10,
     var itemMargin: Int = 0,
     var itemPadding: Int = 0,
     var isMultiSelectable: Boolean = false,
@@ -170,7 +172,7 @@ class ItemSelectorVH(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         // Text
         tv.setTextColor(if (data.isSelected) style.selectedTextColor else style.deselectedTextColor)
-        tv.textSize = style.textSize
+        tv.setTextSize(TypedValue.COMPLEX_UNIT_PX, style.textSize.toFloat());
 
         // BG
         bgShape.setColor(if (data.isSelected) style.selectedColor else style.deselectedColor)
@@ -186,12 +188,14 @@ class ItemSelectorVH(itemView: View) : RecyclerView.ViewHolder(itemView) {
         removeShape.cornerRadius = style.removeBtnSize * 0.5f
         remove.background = removeShape
         remove.setTextColor(style.removeBtnXColor)
+        remove.textSize = style.removeBtnSize * 0.3f
 
         // Layout Param
         val paramsWrapper = wrapper.layoutParams as ViewGroup.MarginLayoutParams
         paramsWrapper.setMargins(style.itemMargin)
         wrapper.layoutParams = paramsWrapper
         wrapper.setPadding(style.itemPadding)
+        wrapper.gravity = Gravity.CENTER_VERTICAL
 
         // Click Listener
         itemView.setOnClickListener { onItemClicked(data.id) }
