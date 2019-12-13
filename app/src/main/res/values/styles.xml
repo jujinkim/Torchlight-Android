@@ -17,6 +17,10 @@
         <item name="editTextStyle">@style/TorchLightEditText</item>
     </style>
 
+    <style name="Splash" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash</item>
+    </style>
+
     <style name="DefaultAppBarLayout" parent="Widget.Design.AppBarLayout">
         <item name="android:background">@android:color/transparent</item>
     </style>
