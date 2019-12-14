@@ -3,6 +3,7 @@ package com.mashup.torchlight.ui
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.mashup.torchlight.ui.signin.SignInActivity
+import com.mashup.torchlight.ui.signin.StartActivity
 import com.mashup.torchlight.work.initializer.ITorchlightInitializerListener
 import com.mashup.torchlight.work.initializer.TorchlightInitializer
 import org.jetbrains.anko.startActivity
@@ -19,7 +20,6 @@ class SplashActivity : AppCompatActivity(), ITorchlightInitializerListener {
     }
 
     override fun onInitializeBegin() {
-
         Timber.v("Start Torchlight initialize")
         initStartTimeStamp = System.currentTimeMillis()
     }
@@ -28,8 +28,8 @@ class SplashActivity : AppCompatActivity(), ITorchlightInitializerListener {
         val initPeriod = System.currentTimeMillis() - initStartTimeStamp
         Timber.v("Finish Torchlight initialize. It took $initPeriod")
 
-        // Todo : If there is already a signed in user account, skip SignInActivity and go to MainActivity directly
-        startActivity<SignInActivity>()
+        // Todo : If there is already a signed-in user account, skip StartActivity and go to MainActivity directly
+        startActivity<StartActivity>()
         finish()
     }
 }
