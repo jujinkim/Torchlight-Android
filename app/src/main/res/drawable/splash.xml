@@ -12,6 +12,7 @@
                 android:height="22dp" />
             <gradient
                 android:type="radial"
+                android:gradientRadius="11dp"
                 android:startColor="#ff2550"
                 android:endColor="@color/main_500" />
         </shape>
