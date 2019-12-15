@@ -49,6 +49,9 @@
     <!-- Sign In -->
     <string name="signin_find_pw">Find password</string>
     <string name="signin_signin">Sign in</string>
+    <string name="signin_email_is_invalid">Email address is not valid.</string>
+    <string name="signin_please_fill_all">Please fill both email and password.</string>
+    <string name="signin_account_info_wrong">Fail to sign in: Email or password is wrong.</string>
 
     <!-- Profile -->
     <string name="profile_mandatory">Mandatory profile</string>

@@ -7,6 +7,10 @@ import com.mashup.torchlight.model.SignInModel
 class SignInViewModel : BaseViewModel() {
     val data = MutableLiveData<SignInModel>()
 
+    init {
+        data.value = SignInModel()
+    }
+
     fun isBasicInfoFilled(): Boolean {
         return data.value?.let {
             return it.emailAddress.isNotEmpty()
