@@ -1,20 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layer-list xmlns:android="http://schemas.android.com/apk/res/android"
+<layer-list
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:opacity="opaque">
     <item android:drawable="@color/background" />
     <item
-        android:gravity="center">
-        <shape
-            android:shape="oval"
-            android:innerRadius="11dp">
-            <size
-                android:width="22dp"
-                android:height="22dp" />
-            <gradient
-                android:type="radial"
-                android:gradientRadius="11dp"
-                android:startColor="#ff2550"
-                android:endColor="@color/main_500" />
-        </shape>
+        android:gravity="center"
+        android:drawable="@drawable/ic_logo">
     </item>
 </layer-list>
