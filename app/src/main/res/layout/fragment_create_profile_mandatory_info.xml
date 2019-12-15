@@ -58,7 +58,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/profile_job"
                 android:layout_marginTop="36dp"/>
-            <com.mashup.torchlight.ui.customview.ItemSelectorView
+            <com.mashup.torchlight.ui.customview.itemselectorview.ItemSelectorView
                 android:id="@+id/selector_profile_job"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
