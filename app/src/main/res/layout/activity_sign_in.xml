@@ -3,6 +3,12 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="signin"
+            type="com.mashup.torchlight.viewmodel.SignInViewModel" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -35,7 +41,8 @@
                     android:inputType="textEmailAddress"
                     android:layout_width="match_parent"
                     android:layout_height="56dp"
-                    android:layout_marginTop="16dp"/>
+                    android:layout_marginTop="16dp"
+                    android:text="@={signin.data.emailAddress}"/>
             </LinearLayout>
 
             <!-- Password -->
@@ -56,7 +63,8 @@
                     android:inputType="textPassword"
                     android:layout_width="match_parent"
                     android:layout_height="56dp"
-                    android:layout_marginTop="16dp"/>
+                    android:layout_marginTop="16dp"
+                    android:text="@={signin.data.passwd}"/>
             </LinearLayout>
 
             <Button
@@ -78,6 +86,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent">
             <TextView
+                android:id="@+id/tvSignUp"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -91,6 +100,7 @@
                 android:layout_marginEnd="24dp"
                 android:background="#5effffff" />
             <TextView
+                android:id="@+id/tvFindPw"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
