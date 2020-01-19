@@ -35,7 +35,8 @@
     <string name="signup_check_duplicated">Check duplicated</string>
     <string name="signup_already_used_email">This email is already signed up</string>
     <string name="signup_send_auth_code">Send auth code</string>
-    <string name="signup_auto_code">Auto code</string>
+    <string name="signup_fail_to_send_auth_code">Fail to send auth code, please try it again.</string>
+    <string name="signup_auth_code">Auth code</string>
     <string name="signup_send_again">Send code again</string>
     <string name="signup_name">Name</string>
     <string name="signup_password">Password</string>

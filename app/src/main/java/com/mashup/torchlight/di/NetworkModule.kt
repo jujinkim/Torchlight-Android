@@ -15,7 +15,7 @@ val networkModule = module {
 
     single {
         Retrofit.Builder()
-            .baseUrl("baseUrl")
+            .baseUrl("http://torchlight.co.kr")
             .client(get())
             .addCallAdapterFactory(get())
             .addConverterFactory(get())

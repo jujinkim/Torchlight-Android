@@ -48,6 +48,10 @@ class SignUpViewModel : BaseViewModel() {
         } ?: false
     }
 
+    fun setAuthCodeSendBusy(busy: Boolean) {
+        sendAuthBtnEnabled.value = busy
+    }
+
     fun isPasswordConditionMatched(): Boolean {
         /*
         Password Condition:
